@@ -65,9 +65,14 @@ sudo chmod +x setup.sh
 ./setup.sh
 ```
 
+## Run in Terminal (for now)
+```
+python3 -u /usr/local/bin/main.py
+```
 
 ## TODO
 - [ ] Setup.sh
 - [ ] Club Delete and Delete Selected -> Delete
 - [ ] Redesign UI
 - [ ] Add support to modify the $PATHs
+- [ ] .desktop file
