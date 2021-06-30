@@ -26,9 +26,21 @@ class main:
     def listPATHs(command: str):
         for i in command.split(':'):
             print(i)
+
+    def getSHELL():
+        # bashCmd = ["export", "PATH=$PATH:$HOME"]
+        # process = subprocess.Popen(bashCmd, stdout=subprocess.PIPE)            
+        # output, error = process.communicate()
+        # print(output)
+        shell_path = os.getenv("SHELL")
+        return shell_path
+
 # define main function
     def main(self):
         main.listPATHs(os.environ["PATH"])
+        shell_path = main.getSHELL()
+        print(shell_path)
+        
         
 
 
