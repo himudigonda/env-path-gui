@@ -14,9 +14,13 @@
 
 </h3>
 
+## Support
+- OS: Debian, Arch and Fedora-based OSs
+- Shells: ZSH, Fish, BASH
+
 ## Steps for installation
 
-### Python3 and pip3
+### Python3 and pip3 (Prereq)
 
 - Debian Based
 ```
@@ -37,16 +41,16 @@ sudo dnf install python3-pip -y
 ```
 
 
-### Tkinter Library
-
-- Arch Based
-```
-sudo pacman -S tk
-```
+### Tkinter Library (Prereq)
 
 - Debian Based
 ```
 sudo apt-get install python3-tk
+```
+
+- Arch Based
+```
+sudo pacman -S tk
 ```
 
 - RedHat Based
