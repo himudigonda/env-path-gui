@@ -133,3 +133,5 @@ dmypy.json
 logic_old.py
 temp
 cal.py
+os
+prereq.list
