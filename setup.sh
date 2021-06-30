@@ -17,6 +17,8 @@ echo " > moving logic.py -> /usr/local/bin"
 sudo cp -v src/logic.py /usr/local/bin/
 echo " > moving main.py -> /usr/local/bin"
 sudo cp -v src/main.py /usr/local/bin
+echo " > moving .desktop -> /usr/share/applications/"
+sudo cp -v env-path-gui.desktop /usr/share/applications/
 
 echo ""
 echo "run \"python3 -u /usr/local/bin/main.py\" in terminal to run the GUI"
