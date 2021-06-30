@@ -33,22 +33,17 @@ def addNewPath():
         print('added')
 
 def deleteExistingPath():
-    if PathElements_tb.selection()[0]:
-        selection = PathElements_tb.selection()[0]
-        path_extraction_dict = (PathElements_tb.item(selection)).get("values")
-        path_extraction_element = path_extraction_dict[1]
-        path_extraction_element = "\:"+path_extraction_element.replace("/","\\/")
-        logic.deletePATH(path_extraction_element)        
-        # print(path_extraction_element+"\\/"+path_extraction_element)
-        PathElements_tb.delete(selection)
+    if PathElements_tb.selection():
+        selection = PathElements_tb.selection()
+        for i in selection:
+            path_extraction_dict = (PathElements_tb.item(i)).get("values")
+            path_extraction_element = path_extraction_dict[1]
+            path_extraction_element = "\:"+path_extraction_element.replace("/","\\/")
+            logic.deletePATH(path_extraction_element)        
+            # print(path_extraction_element+"\\/"+path_extraction_element)
+            PathElements_tb.delete(i)
     else:
         print('Select a path')    
-
-def deleteExistingPaths():
-    selection = PathElements_tb.selection()
-    for i in selection:
-        PathElements_tb.delete(i)
-
 
 root = Tk()
 root.geometry('800x460')
@@ -76,6 +71,4 @@ PathElements_tb.grid(row=2,column=1, columnspan=3,padx=65)
 
 deleteExistingPath_bt = Button(root, text='Delete',command=lambda: deleteExistingPath())
 deleteExistingPath_bt.grid(row=3,column=1,pady = 15)
-deleteExistingPaths_bt = Button(root, text='Delete Multiple',command=lambda: deleteExistingPaths())
-deleteExistingPaths_bt.grid(row=3,column=2,pady = 15)
 root.mainloop()
