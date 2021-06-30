@@ -25,17 +25,18 @@ __SHELL__ = logic.getSHELL()
 def addNewPath():
     _newPath = NewPathElement_ib.get()
     if _newPath in __PATHS__:
-        print('already added')
+        print(' > Already Exsisting')
     else:
         PathElements_tb.insert(parent='',index='end',value=(len(__PATHS__)+1,_newPath))
         __PATHS__.append(_newPath)
         logic.addPATH(_newPath,__SHELL__)
-        print('added')
+        print(' > Added : '+str(_newPath))
 
 def deleteExistingPath():
     if PathElements_tb.selection():
         selection = PathElements_tb.selection()
         for i in selection:
+            print(' > Deleting '+str(i))
             path_extraction_dict = (PathElements_tb.item(i)).get("values")
             path_extraction_element = path_extraction_dict[1]
             path_extraction_element = "\:"+path_extraction_element.replace("/","\\/")
@@ -43,7 +44,7 @@ def deleteExistingPath():
             # print(path_extraction_element+"\\/"+path_extraction_element)
             PathElements_tb.delete(i)
     else:
-        print('Select a path')    
+        print(' > Select a path to delete')    
 
 root = Tk()
 root.geometry('800x460')
