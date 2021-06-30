@@ -1,6 +1,6 @@
 <h1 align="center">env-path-gui<br><br>
 
-![Screenshot_2021-06-30-25_830x491](https://user-images.githubusercontent.com/54891285/123977374-902f8d00-d9dc-11eb-983b-0e7705a47573.png)
+![Screenshot_2021-06-30-58_842x510](https://user-images.githubusercontent.com/54891285/123993164-d7704a80-d9e9-11eb-88df-3d2d1eeb7743.png)
 
 </h1>
 
