@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Exec=python3 -u /usr/local/bin/main.py
+Name=env-path-gui
+Comment=Edit your $PATH using me!
+#Icon=icon path here
