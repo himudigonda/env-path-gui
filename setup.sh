@@ -19,7 +19,7 @@ echo " > moving main.py -> /usr/local/bin"
 sudo cp -v src/main.py /usr/local/bin
 
 echo ""
-echo "run main.py in terminal to run the GUI"
+echo "run \"python3 -u /usr/local/bin/main.py\" in terminal to run the GUI"
 
 echo ""
 echo ";)"
