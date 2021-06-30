@@ -70,5 +70,5 @@ for i in range(len(__PATHS__)):
 PathElements_tb.grid(row=2,column=1, columnspan=3,padx=65)
 
 deleteExistingPath_bt = Button(root, text='Delete',command=lambda: deleteExistingPath())
-deleteExistingPath_bt.grid(row=3,column=1,pady = 15)
+deleteExistingPath_bt.grid(row=3,column=1,pady=50,padx=65,columnspan=4)
 root.mainloop()
