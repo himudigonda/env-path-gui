@@ -14,7 +14,7 @@
 
 </h3>
 
-## Steps to install
+## Steps for installation
 
 ### Python3 and pip3
 
