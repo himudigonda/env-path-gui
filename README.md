@@ -71,9 +71,10 @@ python3 -u /usr/local/bin/main.py
 ```
 
 ## TODO
-- [ ] Setup.sh
+- [x] Setup.sh
 - [x] Club Delete PATH and PATHS -> PATH
 - [ ] Redesign UI
 - [ ] Add support to modify the $PATHs
+- [ ] .desktop icon
 - [ ] .desktop file
 - [ ] scrollbar
