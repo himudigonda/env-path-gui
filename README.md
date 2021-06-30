@@ -76,5 +76,5 @@ python3 -u /usr/local/bin/main.py
 - [ ] Redesign UI
 - [ ] Add support to modify the $PATHs
 - [ ] .desktop icon
-- [ ] .desktop file
+- [x] .desktop file
 - [ ] scrollbar
