@@ -4,50 +4,78 @@
 #? Date Created : #1
 
 # establish imports here
-import os
-import subprocess
+from tkinter import *
+from tkinter import ttk
+from logic import logic
+# import tktable
 
 # global variables here
-__new_path__ = ''
+global __SNO__
+__SNO__ = 1
+global __PATHS__
+__PATHS__ = logic.listPATHs()
+global __SHELL__
+__SHELL__ = logic.getSHELL()
 # start class here
 '''
 ###           ###
 #   main Class  #
 ###           ###
 '''
+def addNewPath():
+    _newPath = NewPathElement_ib.get()
+    if _newPath in __PATHS__:
+        print('already added')
+    else:
+        PathElements_tb.insert(parent='',index='end',value=(len(__PATHS__)+1,_newPath))
+        __PATHS__.append(_newPath)
+        logic.addPATH(_newPath,__SHELL__)
+        print('added')
+
+def deleteExistingPath():
+    if PathElements_tb.selection()[0]:
+        selection = PathElements_tb.selection()[0]
+        path_extraction_dict = (PathElements_tb.item(selection)).get("values")
+        path_extraction_element = path_extraction_dict[1]
+        path_extraction_element = "\:"+path_extraction_element.replace("/","\\/")
+        logic.deletePATH(path_extraction_element)        
+        # print(path_extraction_element+"\\/"+path_extraction_element)
+        PathElements_tb.delete(selection)
+    else:
+        print('Select a path')    
+
+def deleteExistingPaths():
+    selection = PathElements_tb.selection()
+    for i in selection:
+        PathElements_tb.delete(i)
 
 
-class main:
-    def __init__(self) -> None:
-        pass
+root = Tk()
+root.geometry('800x460')
+root.title('env-path-editor')
 
-# define Methods here
+NewPathElement_ib = Entry(root, width = 60,borderwidth=1)
+NewPathElement_ib.grid(row=1,column=1,pady=50,padx=65,columnspan=2)
 
-    def listPATHs(command: str):
-        for i in command.split(':'):
-            print(i)
-
-    def getSHELL():
-        # bashCmd = ["export", "PATH=$PATH:$HOME"]
-        # process = subprocess.Popen(bashCmd, stdout=subprocess.PIPE)            
-        # output, error = process.communicate()
-        # print(output)
-        shell_path = os.getenv("SHELL")
-        return shell_path
-
-# define main function
-    def main(self):
-        main.listPATHs(os.environ["PATH"])
-        shell_path = main.getSHELL()
-        print(shell_path)
-        
-        
+AddPathElement_bt = Button(root,text = 'Add',command=lambda: addNewPath()).grid(row=1,column=3)
 
 
-mainHandler = main()
+PathElements_tb = ttk.Treeview(root)
+# verscrlbar = ttk.Scrollbar(root,orient ="vertical", command = PathElements_tb.yview)
+# verscrlbar.grid(rowspan=10)
+# PathElements_tb.configure(xscrollcommand = verscrlbar.set)
+PathElements_tb['columns'] = ('S.No.', 'Path directory')
+PathElements_tb.column("#0",width=0)
+PathElements_tb.column("S.No.",anchor=W, width=70)
+PathElements_tb.column("Path directory", anchor=W, width=600)
+PathElements_tb.heading("S.No.", text="S.No.",anchor=W)
+PathElements_tb.heading("Path directory", text="Path Directory",anchor=W)
+for i in range(len(__PATHS__)):
+    PathElements_tb.insert(parent='',index='end',values=(i+1,__PATHS__[i]))
+PathElements_tb.grid(row=2,column=1, columnspan=3,padx=65)
 
-# main function
-if __name__ == '__main__':
-    mainHandler.main()
-
-### END OF CLASS ###
+deleteExistingPath_bt = Button(root, text='Delete',command=lambda: deleteExistingPath())
+deleteExistingPath_bt.grid(row=3,column=1,pady = 15)
+deleteExistingPaths_bt = Button(root, text='Delete Multiple',command=lambda: deleteExistingPaths())
+deleteExistingPaths_bt.grid(row=3,column=2,pady = 15)
+root.mainloop()
