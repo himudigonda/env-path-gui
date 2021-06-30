@@ -72,7 +72,7 @@ python3 -u /usr/local/bin/main.py
 
 ## TODO
 - [ ] Setup.sh
-- [ ] Club Delete and Delete Selected -> Delete
+- [x] Club Delete PATH and PATHS -> PATH
 - [ ] Redesign UI
 - [ ] Add support to modify the $PATHs
 - [ ] .desktop file
