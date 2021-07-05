@@ -16,7 +16,8 @@
 
 ## Support
 - OS: Debian, Arch and Fedora-based OSs
-- Shells: ZSH, Fish, BASH
+- Shells: ZSH
+- ⭕ Fish only supports adding paths (for now) ⭕
 
 ## Steps for installation
 
