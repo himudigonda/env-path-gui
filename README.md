@@ -65,10 +65,14 @@ sudo chmod +x setup.sh
 ./setup.sh
 ```
 
-## Run in Terminal (for now)
+## Run Using Terminal
 ```
 python3 -u /usr/local/bin/main.py
 ```
+
+## Run Using App Browser
+Search for ```env-path-gui``` and run it.<br>
+Terminal is set to open b default for debugging purposes.
 
 ## TODO
 - [x] Setup.sh
