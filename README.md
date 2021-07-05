@@ -79,6 +79,6 @@ Terminal is set to open b default for debugging purposes.
 - [x] Club Delete PATH and PATHS -> PATH
 - [ ] Redesign UI
 - [ ] Add support to modify the $PATHs
-- [ ] .desktop icon
+- [x] .desktop icon
 - [x] .desktop file
 - [ ] scrollbar
